@@ -1,0 +1,172 @@
+header, nav, main{
+    display: block;
+}
+html, body, ul, li, h4, a, p{
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-height: 130%;
+}
+header{
+    background-color: black;
+    color: green;
+    padding: 10px 20px;
+}
+.logo a{
+    color: green;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.top-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 18px;
+}
+nav{
+    background-color: black;
+    display: flex;
+
+}
+.bottom-nav a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 150px;
+    padding: 2px;
+}
+.bottom-nav li{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 900px;
+    padding: 2px;
+}
+main {
+    padding: 2px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 960px;
+    font-size: 20px;
+}
+.container{
+    margin: auto;
+    width: 50%;
+    padding: 100px;
+
+}
+.log{
+  margin: auto;
+  width: 50%;
+  padding: 10px
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:black;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 5px;
+}
+.cat1 li, .cat2 li{
+    list-style: none;
+}
+.cat1 a, .cat2 a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+}
+.cat1 img{
+    float: left;
+}
+.cats1 {
+    float: left;
+}
+aside{
+    float: right;
+}
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    width: 100%;
+}
+.in{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+input[type=text], input[type=datetime-local] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+ button[type=submit]{
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+li{
+  list-style: none;
+}
+li a{
+  text-decoration: none;
+  color: black;
+  align-items: center;
+  font-size: 30px;
+}
+div{
+  margin-right: auto;
+  margin-left: auto;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.error{
+  color: orangered
+}

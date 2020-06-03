@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Connections</title>
+    <link href="/assets/stylesheet/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/jpg" href="/assets/image/icon.jpg">
+</head>
+<body>
+  <%-include('partial/header') -%>
+  <%-include('partial/navigation') -%>
+<main>
+    <section>
+
+    <h2>Your Saved Connections</h2>
+    <% if(userConnections.length == 0 || userConnections == undefined){ %>
+      <h4>You have no connections</h4>
+      <% }else{ %>
+        <form method="post">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Connection</th>
+                <th scope="col">Category</th>
+                <th scope="col">RSVP</th>
+                <th scope="col span=2">Update</th>
+              </tr>
+            </thead>
+
+            <tbody>
+            <!-- <%  for (let row = 0; row < userConnections.length; row++) { %>
+                <%  for (let col = 0; col < userConnections[row].length; col++) { %>
+                  <tr>
+                        <td><%= userConnections[row][col].connectionName %></td>
+                        <td><%= userConnections[row][col].connectionTopic %></td>
+                        <td><%= userConnections[row][col].rsvp %></td>
+                          </tr>
+                <%  } %>
+            <%  } %> -->
+
+            <%for(var j=0; j< userConnections.length; j++){ %>
+                      <tr>
+                          <td> <% if(userConnections[j]._connection._host.split(" ")[0] == theUser._firstName) { %><img
+                                  src="/assets/image/sports.jpg" height="100" width="100" alt="..." class="five-five rounded-circle"> <% } %>
+                              <%= userConnections[j]._connection._connectionName %></td>
+                          <td><%= userConnections[j]._connection._connectionTopic %></td>
+                          <td><%= userConnections[j]._rsvp %></td>
+                          <td>
+
+                            <input type="hidden" name="viewConnection" value="<%= userConnections[j]._connection._connectionId %>" />
+
+                            <button type="submit"formaction="/connect/connection/<%= userConnections[j]._connection._connectionId%>">Update</button>
+                            <button type="submit" formaction="/connect/myconnections/delete" class="btn btn-primary-bordered btn-sm" name="connectionId"
+                            value="<%= userConnections[j]._connection._connectionId%>">Delete</button>
+                  </td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </form>
+        <% } %>
+    </section>
+</main>
+<%-include('partial/footer') -%>
+
+</body>
+</html>

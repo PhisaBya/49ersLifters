@@ -1,0 +1,115 @@
+
+use 49erslifters;
+db.dropDatabase();
+use 49erslifters;
+
+
+db.Connections.insertMany([
+{
+"connectionId":1,
+"name":"49ers Lifters - Chest & Triceps & Shoulders",
+"topic":"Upper Body",
+"details":"I really need to increase my bench",
+"date":"Monday, February 24, 2020",
+"host":"Norm Niner",
+"startTime":"5:00pm",
+"endTime":"6:00pm",
+"location":"UREC",
+"image":"david.jpg",
+"status":"Active",
+"user":"pbya@uncc.edu"
+},
+{
+"connectionId":2,
+"name":"49ers Lifters - Back & Biceps",
+"topic":"Upper Body",
+"details":"I really need to increase my bench",
+"date":"Tuesday, February 25, 2020",
+"host":"Norm Niner",
+"startTime":"5:00pm",
+"endTime":"6:00pm",
+"location": "UREC",
+"image":"david.jpg",
+"status":"Active",
+"user":"pbya@uncc.edu"
+},
+{
+"connectionId":3,
+"name":"49ers Lifters - Abs",
+"topic":"Upper Body",
+"details":"I really need a shredded body",
+"host":"Norm Niner",
+"date":"Wednesday, February 26, 2020",
+"startTime":"5:00pm",
+"endTime":"6:00pm",
+"location":"UREC",
+"image":"david.jpg",
+"status":"Active",
+"user":"pbya@uncc.edu"
+},
+{
+"connectionId":4,
+"name":"49ers Lifters - Hamstrings",
+"topic":"Lower Body",
+"details":"I really need to increase my squat",
+"host":"Norm Niner",
+"date":"Thursday, February 27, 2020",
+"startTime":"5:00pm",
+"endTime":"6:00pm",
+"location":"UREC",
+"image":"dumbbell.jpg",
+"status":"Active",
+"user":"pbya@uncc.edu"
+},
+{
+"connectionId":5,
+"name":'49ers Lifters - Quadriceps',
+"topic":'Lower Body',
+"details":'I really need to increase my squat',
+"host":"Norm Niner",
+"date":'Tuesday, February 25, 2020',
+"startTime":'5:00pm',
+"endTime":'6:00pm',
+"location":'UREC',
+"image":"dumbbell.jpg",
+"status":"Active",
+"user":"pbya@uncc.edu"
+},
+{
+"connectionId":6,
+"name":'49ers Lifters - Calves',
+"topic":'Lower Body',
+"details":'I really need to increase my squat',
+"host":"Norm Niner",
+"date":'Tuesday, February 25, 2020',
+"startTime":'6:00pm',
+"endTime":'7:30pm',
+"location":'UREC',
+"image":"dumbbell.jpg",
+"status":"Active",
+"user":"pbya@uncc.edu"
+}
+]);
+db.Users.insertMany([
+    {
+        "firstName": 'Phisa',
+        "lastName": 'Bya',
+        "email": 'pbya@uncc.edu',
+        "username": 'pbya@uncc.edu',
+        "password": 'Phisa54321!'
+    },
+    {
+        "firstName": 'John',
+        "lastName": 'Deere',
+        "email": 'jdeere@uncc.edu',
+        "username": 'jdeere@uncc.edu',
+        "password": 'Deere54321!'
+    }
+]);
+db.UserConnections.insertMany([
+    {
+    "user": '1',
+    "connection": 3,
+    "rsvp": 'Maybe'
+    }
+]);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/styles.css">
+  <link rel="icon" type="image/jpg" href="/assets/image/icon.jpg">
+</head>
+
+
+<body>
+  <%-include('partial/header') -%>
+  <%-include('partial/navigation') -%>
+  <section>
+    <h2>Connections</h2>
+      <% for(let i = 0; i < data.topics.length; i++){ %>
+        <h3><%= data.topics[i] %></h3>
+        <ul class="links_list">
+          <% for(let j = 0; j < data.connections.length; j++){ %>
+            <% if(data.connections[j]._connectionTopic === data.topics[i]){ %>
+                <li><a href="/connect/connection/<%= data.connections[j]._connectionId %>"<%= data.connections[j]._connectionName %></a></li>
+            <% } %>
+          <% } %>
+        </ul>
+      <% } %>
+
+  </section>
+
+  <%- include('footer.ejs'); -%>
+</body>
+
+</html>

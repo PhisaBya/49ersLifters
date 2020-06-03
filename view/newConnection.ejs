@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>49ers Lifters</title>
+    <link href="/assets/stylesheet/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/jpg" href="/assets/image/icon.jpg">
+</head>
+<body>
+<%-include('partial/header') -%>
+<%-include('partial/navigation') -%>
+<main>
+<div class="in">
+  <form class="newCon" action="/connect/addconnection/new" method="POST">
+    <label for="topic">Topic </label>
+    <input type="text" name="topic" id="topic"><br>
+    <div class="error">
+      <%if(err !== ""){if(err.topic){%>
+            <em id='error'>*<%=err.topic.msg%></em>
+          <%}}%>
+    </div>
+        <br>
+    <label for="name">Connection Name </label>
+    <input type="text" name="title" id="title" ><br>
+    <div class="error">
+      <%if(err !== ""){if(err.title){%>
+            <em id='error'>*<%=err.title.msg%></em>
+          <%}}%>
+    </div>
+        <br>
+    <label for="details">Details </label>
+    <input type="text" name="detail" id="detail>" rows="4" cols="50"><br>
+    <div class="error">
+      <%if(err !== ""){if(err.detail){%>
+            <em id='error'>*<%=err.detail.msg%></em>
+          <%}}%>
+    </div>
+        <br>
+    <label for="when">When</label><br>
+    <input type="date" name="when" id="when"><br>
+    <div class="error">
+      <%if(err !== ""){if(err.when){%>
+            <em id='error'>*<%=err.when.msg%></em>
+          <%}}%>
+    </div>
+        <br>
+    <input type="time" name="start"  id="start" >
+    <div class="error">
+      <%if(err !== ""){if(err.start){%>
+            <em id='error'>*<%=err.start.msg%></em>
+          <%}}%>
+    </div>
+    <input type="time" name="end"  id="end" ><br>
+    <div class="error">
+      <%if(err !== ""){if(err.end){%>
+            <em id='error'>*<%=err.end.msg%></em>
+          <%}}%>
+    </div>
+        <br>
+    <label for="where">Where</label>
+    <input type="text" name="where" id="where" ><br>
+    <div class="error">
+      <%if(err !== ""){if(err.where){%>
+            <em id='error'>*<%=err.where.msg%></em>
+          <%}}%>
+    </div>
+
+
+    <button type="submit" name="button">create connection</button>
+  </form>
+</div>
+</main>
+<%-include('partial/footer') -%>
+
+</body>
+</html>

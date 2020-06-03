@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connection</title>
+    <link href="/assets/stylesheet/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/jpg" href="/assets/image/icon.jpg">
+</head>
+<body>
+  <%-include('partial/header') -%>
+  <%-include('partial/navigation') -%>
+<main>
+  <% if(typeof data !== 'undefined' ){ %>
+    <div class="cats1">
+        <h4><%= data.connection._connectionName %></h4>
+        <img src="/assets/image/<%= data.connection._image %>" width="90" height="120" alt="David">
+        <h5 class="card-title">Hosted by <%= data.connection._host %></h5>
+        <p class="card-text"><%= data.connection._startTime %> - <%= data.connection._endTime %></p>
+        <p class="card-text"><%= data.connection._location%></p>
+        <h3>Details</h3>
+        <p class="ml-4"><%= data.connection._detail %></p>
+
+    </div>
+    <aside>
+
+            <h4>Are you going? X people going</h4>
+            <form method="post">
+            <input hidden name="connectionId" value="<%= data.connection._connectionId %>">
+            <button type="submit" formaction="/connect/myconnections/rsvp" name="rsvp" id="rsvp" value="Yes">Yes</button>
+            <button type="submit" formaction="/connect/myconnections/rsvp" name="rsvp" id="rsvp" value="No">No</button>
+            <button type="submit" formaction="/connect/myconnections/rsvp" name="rsvp" id="rsvp" value="Maybe">Maybe</button>
+          </form>
+
+    </aside>
+    <% } %>
+</main>
+<%-include('partial/footer') -%>
+
+</body>
+</html>

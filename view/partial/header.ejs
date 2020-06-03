@@ -1,0 +1,21 @@
+
+<header>
+    <div class="logo">
+        <a href="/">
+            <h4>49ers Lifters</h4>
+        </a>
+    </div>
+    <nav class="top-nav">
+        <ul class="nav-links">
+
+        <li><a href="/connect/myConnections/newConnection">Start a new connection</a></li>
+          <% if (typeof theUser != 'undefined'){ %>
+          <li><a href="/connect/myconnections">My connections</a></li>
+          <li><a href="/connect/myconnections/logout">Sign Out</a></li>
+        <% }else{ %>
+        <li><a href="/connect/myconnections">Login</a></li>
+        <li><a href="/connect/myConnections">Sign up</a></li>
+        <% } %>
+        </ul>
+    </nav>
+</header>

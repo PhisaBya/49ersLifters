@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Connections</title>
+    <link href="/assets/stylesheet/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/jpg" href="/assets/image/icon.jpg">
+</head>
+<body>
+  <%-include('partial/header') -%>
+  <%-include('partial/navigation') -%>
+<main>
+    <section>
+        <h1>David's Connection</h1>
+        <table class="connections">
+            <thead>
+            <tr>
+                <th>Connection</th>
+                <th>Category</th>
+                <th>Going</th>
+                <th>Action</th>
+            </tr>
+
+        <% for(var i= 0; i<usersConnections.length; i++) { %>
+    <tr>
+        <td><%=usersConnections[i].connection.connectionName%></td>
+        <td><%=usersConnections[i].connection.connectionTopic%></td>
+        <td><%=usersConnections[i].rsvp%></td>
+    </tr>
+            <th>
+              <form method="post">
+                       <button formaction="/connect/myConnections/update" class="update-button" name="update">Update</button>
+                       <button formaction="/connect/myConnections/delete" class="delete-button" name="delete">Delete</button>
+                   </form>
+            </th>
+        <% } %>
+
+        </table>
+    </section>
+</main>
+<%-include('partial/footer') -%>
+
+</body>
+</html>
